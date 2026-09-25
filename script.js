@@ -9,6 +9,8 @@ const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox img");
 const lightboxClose = document.querySelector(".lightbox-close");
 
+const ImageCounter = document.querySelector(".image-count");
+
 
 console.log(filters)
 
@@ -57,6 +59,7 @@ const photos = [
         layout: "normal"
     }
 ];
+ImageCounter.textContent = `${photos.length} Photographs`;
 
 
 function renderGallery(photoList) {
@@ -139,6 +142,8 @@ renderGallery(photos);
 filters.forEach((filter) => {
     filter.addEventListener("click", () => {
 
+        ImageCounter.textContent = "";
+
         const category = filter.textContent.trim();
 
         filters.forEach(item => {
@@ -151,7 +156,12 @@ filters.forEach((filter) => {
 
         renderGallery(filteredPhotos);
 
-        console.log(category);
+        console.log(filteredPhotos);
+
+        let count = filteredPhotos.length;
+
+        ImageCounter.textContent = `${count} Photographs`;
     });
 
 });
+
