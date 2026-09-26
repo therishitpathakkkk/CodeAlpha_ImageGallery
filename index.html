@@ -3,140 +3,242 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Rishit's Gallery</title>
+
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-
+    <!-- remix icon -->
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-/>
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
 
+    <!-- css -->
     <link rel="stylesheet" href="style.css">
-
 </head>
+
 
 <body>
 
-    <!-- Navbar -->
-
+    <!-- navbar -->
     <header class="navbar">
 
         <a href="#" class="logo">
 
             <span class="logo-mark">R</span>
-            <span> RISHIT </span>
+
+            <span>RISHIT</span>
 
         </a>
 
 
         <nav class="nav-links">
 
-            <a href="#"> Explore </a>
+            <a href="#">Explore</a>
 
-            <a href="#"> Collections </a>
+            <a href="#">Collections</a>
 
-            <a href="#"> About </a>
+            <a href="#">About</a>
+
         </nav>
 
 
         <button class="add-photo-btn">
 
-            <span>+</span> Add Photos
+            <span>+</span>
+
+            Add Photos
 
         </button>
 
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
+
+        <!-- file input -->
+        <input
+            type="file"
+            class="photo-input"
+            accept="image/*"
+            multiple
+            hidden
+        >
+
+
+        <!-- add photo modal -->
+        <div class="add-photo-modal">
+
+            <div class="add-photo-box">
+
+                <button class="add-photo-close">
+                    <i class="ri-close-line"></i>
+                </button>
+
+
+                <h2>Add Photos</h2>
+
+                <p>
+                    Select a category for your photos
+                </p>
+
+
+                <!-- categories -->
+                <div class="category-options">
+                </div>
+
+
+                <!-- new category -->
+                <button class="new-category-btn">
+                    + Create New Category
+                </button>
+
+
+                <div class="new-category-form">
+
+                    <input
+                        type="text"
+                        class="new-category-input"
+                        placeholder="Enter category name"
+                    >
+
+                    <button class="create-category-btn">
+                        Create
+                    </button>
+
+                </div>
+
+
+                <!-- choose photos -->
+                <button class="choose-photos-btn">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- mobile menu button -->
+        <button
+            class="mobile-menu-btn"
+            aria-label="Toggle menu"
+        >
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
         </button>
 
+
+        <!-- mobile menu -->
         <div class="mobile-menu">
+
             <a href="#">Explore</a>
+
             <a href="#">Collections</a>
+
             <a href="#">About</a>
-            <button>Add Photos</button>
+
+
+            <button class="mobile-add-photo-btn">
+                Add Photos
+            </button>
+
         </div>
 
     </header>
 
-    <!-- HERO SECTION -->
 
+
+    <!-- hero -->
     <section class="hero">
 
         <div class="hero-content">
 
-            <p class="eyebrow"> ✦ VISUAL STORIES </p>
+            <p class="eyebrow">
+                ✦ VISUAL STORIES
+            </p>
 
-            <h1> Capture <em> the moment. </em>
+
+            <h1>
+                Capture <em>the moment.</em>
             </h1>
+
 
             <p class="hero-text">
                 A curated collection of photographs,
-                memories and beautiful places from around the world.
+                memories and beautiful places from
+                around the world.
             </p>
 
         </div>
+
     </section>
 
-    <!-- FILTER WRAPPER -->
 
 
+    <!-- gallery -->
     <section class="gallery-section">
 
+
+        <!-- filters -->
         <div class="filter-wrapper">
 
             <div class="filters">
-
-                <button class="filter active"> All </button>
-
-                <button class="filter"> Nature </button>
-
-                <button class="filter"> Travel </button>
-
-                <button class="filter"> People </button>
-
-                <button class="filter"> City </button>
-
-                <button class="filter"> Architecture </button>
-
+                <!-- filters generated by JS -->
             </div>
 
-            <p class="image-count"> </p>
+
+            <p class="image-count">
+                0 Photographs
+            </p>
 
         </div>
 
 
+        <!-- gallery grid -->
         <div class="gallery-grid">
-
+            <!-- gallery generated by JS -->
         </div>
 
+
+        <!-- explore all -->
         <div class="more-section">
 
             <button class="more-btn">
-                <span> Explore all Photpgraphs</span>
 
-                <strong> → </strong>
+                <span>
+                    Explore all Photographs
+                </span>
+
+                <strong>→</strong>
 
             </button>
 
         </div>
 
 
+
+        <!-- quote -->
         <section class="quote-section">
 
             <p class="quote">
                 “We take photos as a return ticket
                 to a moment otherwise gone.”
             </p>
+
 
             <span>
                 — Rishit Pathak...
@@ -145,13 +247,14 @@
         </section>
 
 
-        <!-- FOOTER  -->
 
+        <!-- footer -->
         <footer>
 
             <div class="footer-top">
 
 
+                <!-- footer brand -->
                 <div class="footer-brand">
 
                     <a href="#" class="logo">
@@ -166,6 +269,7 @@
 
                     </a>
 
+
                     <p>
                         Stories captured through the lens.
                     </p>
@@ -174,21 +278,43 @@
 
 
 
+                <!-- social links -->
                 <div class="footer-links">
 
-                    <a href="https://www.instagram.com/therishitpathakkkk?gsh=YWZpY2lzcTJscWVK" target="_blank">
+
+                    <a
+                        href="https://www.instagram.com/therishitpathakkkk?gsh=YWZpY2lzcTJscWVK"
+                        target="_blank"
+                    >
+
                         <i class="ri-instagram-line app-logo"></i>
+
                         Instagram
+
                     </a>
 
-                    <a href="https://github.com/therishitpathakkkk" target="_blank">
+
+                    <a
+                        href="https://github.com/therishitpathakkkk"
+                        target="_blank"
+                    >
+
                         <i class="ri-github-fill app-logo"></i>
+
                         GitHub
+
                     </a>
 
-                    <a href="https://www.linkedin.com/in/rishit-pathak" target="_blank">
+
+                    <a
+                        href="https://www.linkedin.com/in/rishit-pathak"
+                        target="_blank"
+                    >
+
                         <i class="ri-linkedin-box-fill app-logo"></i>
+
                         Linkedin
+
                     </a>
 
                 </div>
@@ -197,12 +323,13 @@
 
 
 
-
+            <!-- footer bottom -->
             <div class="footer-bottom">
 
                 <span>
                     © 2026 Rishit's Gallery
                 </span>
+
 
                 <span>
                     Built with HTML, CSS & JavaScript
@@ -212,21 +339,48 @@
 
         </footer>
 
-
     </section>
 
 
+
+    <!-- lightbox -->
     <div class="lightbox">
-        <button class="lightbox-close"><i class="ri-close-circle-line"></i></button>
-        
-        <button class="lightbox-prev"><i class="ri-skip-left-line"></i></button>
-        <img src="" alt="">
-        <button class="lightbox-next"><i class="ri-skip-right-line"></i></button>
-        
+
+
+        <!-- close -->
+        <button class="lightbox-close">
+
+            <i class="ri-close-circle-line"></i>
+
+        </button>
+
+
+        <!-- previous -->
+        <button class="lightbox-prev">
+
+            <i class="ri-skip-left-line"></i>
+
+        </button>
+
+
+        <!-- image -->
+        <img
+            src=""
+            alt=""
+        >
+
+
+        <!-- next -->
+        <button class="lightbox-next">
+
+            <i class="ri-skip-right-line"></i>
+
+        </button>
+
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
