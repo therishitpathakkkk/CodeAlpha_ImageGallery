@@ -149,9 +149,11 @@ function renderFilters(activeCategory = "All") {
 
             const category = filter.textContent.trim();
 
+
             filters.forEach(item => {
                 item.classList.remove("active");
             });
+
 
             filter.classList.add("active");
 
@@ -282,11 +284,13 @@ function openLightbox() {
 
 // close lightbox
 function closeLightbox() {
+
     lightbox.classList.remove("active");
 }
 
 
 lightboxClose.addEventListener("click", () => {
+
     closeLightbox();
 });
 
@@ -294,6 +298,7 @@ lightboxClose.addEventListener("click", () => {
 lightbox.addEventListener("click", event => {
 
     if (event.target === lightbox) {
+
         closeLightbox();
     }
 });
@@ -305,6 +310,7 @@ function showNextImage() {
     if (!currentPhotos.length) {
         return;
     }
+
 
     if (currentIndex === currentPhotos.length - 1) {
 
@@ -331,6 +337,7 @@ function showPreviousImage() {
         return;
     }
 
+
     if (currentIndex === 0) {
 
         currentIndex = currentPhotos.length - 1;
@@ -350,11 +357,13 @@ function showPreviousImage() {
 
 
 lightboxNext.addEventListener("click", () => {
+
     showNextImage();
 });
 
 
 lightboxPrev.addEventListener("click", () => {
+
     showPreviousImage();
 });
 
@@ -362,23 +371,40 @@ lightboxPrev.addEventListener("click", () => {
 // keyboard
 document.addEventListener("keydown", event => {
 
+    // close add photo popup
+    if (event.key === "Escape") {
+
+        if (addPhotoModal.classList.contains("active")) {
+
+            closeAddPhotoModal();
+
+            return;
+        }
+
+        if (lightbox.classList.contains("active")) {
+
+            closeLightbox();
+
+            return;
+        }
+    }
+
+
+    // lightbox controls
     if (!lightbox.classList.contains("active")) {
         return;
     }
 
 
     if (event.key === "ArrowRight") {
+
         showNextImage();
     }
 
 
     if (event.key === "ArrowLeft") {
+
         showPreviousImage();
-    }
-
-
-    if (event.key === "Escape") {
-        closeLightbox();
     }
 });
 
@@ -406,11 +432,13 @@ lightbox.addEventListener("touchend", event => {
 
 
     if (distance > 50) {
+
         showNextImage();
     }
 
 
     if (distance < -50) {
+
         showPreviousImage();
     }
 });
@@ -448,6 +476,7 @@ function renderCategoryOptions() {
 
 
         if (category === selectedCategory) {
+
             button.classList.add("selected");
         }
 
@@ -480,6 +509,7 @@ function selectCategory(category) {
         if (
             option.textContent.trim() === category
         ) {
+
             option.classList.add("selected");
         }
     });
@@ -545,6 +575,7 @@ addPhotoClose.addEventListener("click", () => {
 addPhotoModal.addEventListener("click", event => {
 
     if (event.target === addPhotoModal) {
+
         closeAddPhotoModal();
     }
 });
@@ -555,7 +586,9 @@ newCategoryBtn.addEventListener("click", () => {
 
     newCategoryForm.classList.toggle("active");
 
+
     if (newCategoryForm.classList.contains("active")) {
+
         newCategoryInput.focus();
     }
 });
