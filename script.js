@@ -9,7 +9,10 @@ const lightbox = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox img");
 const lightboxClose = document.querySelector(".lightbox-close");
 
-const ImageCounter = document.querySelector(".image-count");
+const Imagecounter = document.querySelector(".image-count");
+
+const lightboxNext = document.querySelector(".lightbox-next");
+const lightboxPrev = document.querySelector(".lightbox-prev");
 
 
 console.log(filters)
@@ -59,8 +62,11 @@ const photos = [
         layout: "normal"
     }
 ];
-ImageCounter.textContent = `${photos.length} Photographs`;
 
+let currentPhotos = photos;
+let currentIndex = 0;
+
+Imagecounter.textContent = `${photos.length} Photographs`;
 
 function renderGallery(photoList) {
 
@@ -115,6 +121,7 @@ function renderGallery(photoList) {
         expandBtn.addEventListener("click", () => {
             lightboxImage.src = photo.image;
             lightbox.classList.add("active");
+            currentIndex = index;
 
         });
 
@@ -123,6 +130,8 @@ function renderGallery(photoList) {
 
     });
 };
+
+
 
 lightboxClose.addEventListener("click", () => {
     lightbox.classList.remove("active");
@@ -142,7 +151,7 @@ renderGallery(photos);
 filters.forEach((filter) => {
     filter.addEventListener("click", () => {
 
-        ImageCounter.textContent = "";
+        Imagecounter.textContent = ""
 
         const category = filter.textContent.trim();
 
@@ -154,14 +163,43 @@ filters.forEach((filter) => {
 
         const filteredPhotos = category === "All" ? photos : photos.filter(photo => photo.category === category);
 
-        renderGallery(filteredPhotos);
+        currentPhotos = filteredPhotos;
+        currentIndex = 0;
 
-        console.log(filteredPhotos);
+        renderGallery(filteredPhotos);
 
         let count = filteredPhotos.length;
 
-        ImageCounter.textContent = `${count} Photographs`;
+        Imagecounter.textContent = `${count} Photographs`;
+        console.log(category);
     });
 
 });
 
+// next-previous functionality in lightbox
+
+lightboxNext.addEventListener("click", () => {
+
+    if(currentIndex === currentPhotos.length - 1) {
+        currentIndex = 0;
+    }else {
+        currentIndex ++;
+    };
+
+    lightboxImage.src = currentPhotos[currentIndex].image;
+
+    // console.log(lightboxImage.src);
+});
+
+lightboxPrev.addEventListener("click", () => {
+    
+    if(currentIndex === 0) {
+        currentIndex = currentPhotos.length - 1;
+    } else {
+        currentIndex --;
+    }
+
+    lightboxImage.src = currentPhotos[currentIndex].image;
+    // console.log(lightboxImage.src)
+
+});

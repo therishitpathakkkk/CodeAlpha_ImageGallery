@@ -581,6 +581,42 @@ footer {
     }
 }
 
+/* next-pre button in lightbox */
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f2eb;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 9999999999;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-50%) scale(1.08);
+}
+
 /* TABLET */
 
 @media (max-width: 950px) {
@@ -711,5 +747,39 @@ footer {
     .footer-links {
         flex-wrap: wrap;
         gap: 20px;
+    }
+
+      .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+        background: rgba(245, 242, 235, 0.9);
+        color: #171714;
+        font-size: 20px;
+        z-index: 10;
+        font-weight: 700;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        background: #f5f2eb;
+        transform: translateY(-50%) scale(1.05);
     }
 }
