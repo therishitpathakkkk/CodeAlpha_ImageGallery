@@ -1,6 +1,6 @@
 # 📸 RISHIT'S GALLERY
 
-A modern and responsive image gallery website built using **HTML, CSS, and JavaScript** as part of my **CodeAlpha Frontend Development Internship**.
+A modern and responsive image gallery website built using *HTML, CSS, and JavaScript** as part of my **CodeAlpha Frontend Development Internship*.
 
 The gallery focuses on presenting photographs through a clean, dark and modern visual interface with interactive filtering, dynamic rendering and a lightbox experience.
 
