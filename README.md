@@ -51,6 +51,6 @@ CodeAlpha_ImageGallery/
 │   ├── image copy 2.png
 │   ├── image copy 3.png
 │   ├── image copy 4.png
-│   └── image copy 5.png
+│   └── image copy 5.pn
 │
 └── README.md
